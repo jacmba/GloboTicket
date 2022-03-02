@@ -14,6 +14,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Home from './Home';
 import Tickets from './Ticket';
+import Contact from './Contact';
 
 const Stack = createStackNavigator();
 
@@ -29,6 +30,14 @@ const App: () => Node = () => {
           <Stack.Screen
             name="Tickets"
             component={Tickets}
+            options={{
+              headerTitleAlign: 'center',
+              headerTitleStyle: {fontFamily: 'Ubuntu-Regular'},
+            }}
+          />
+          <Stack.Screen
+            name="Contact"
+            component={Contact}
             options={{
               headerTitleAlign: 'center',
               headerTitleStyle: {fontFamily: 'Ubuntu-Regular'},
