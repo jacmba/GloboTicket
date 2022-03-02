@@ -58,3 +58,8 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+
+
+# Keystore
+globoticket-upload-key.keystore
+/**/globoticket-upload-key.keystore
