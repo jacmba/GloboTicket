@@ -6,16 +6,36 @@
  * @flow strict-local
  */
 
+import 'react-native-gesture-handler';
 import React from 'react';
 import type {Node} from 'react';
 import {StatusBar} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 import Home from './Home';
+import Tickets from './Ticket';
+
+const Stack = createStackNavigator();
 
 const App: () => Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <Home username="Sports Fan" />
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home" headerMode="screen">
+          <Stack.Screen name="Home" options={{headerShown: false}}>
+            {props => <Home {...props} userName="Sports Fan" />}
+          </Stack.Screen>
+          <Stack.Screen
+            name="Tickets"
+            component={Tickets}
+            options={{
+              headerTitleAlign: 'center',
+              headerTitleStyle: {fontFamily: 'Ubuntu-Regular'},
+            }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
     </>
   );
 };
