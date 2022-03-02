@@ -14,6 +14,11 @@ const Menu = () => {
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.button}
+        onPress={() => navigation.navigate('News')}>
+        <Text style={styles.buttontext}>News</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
         onPress={() => navigation.navigate('Contact')}>
         <Text style={styles.buttontext}>Contact us</Text>
       </TouchableOpacity>
